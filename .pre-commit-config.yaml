@@ -1,0 +1,84 @@
+# Configuration for pre-commit hooks
+# See: https://pre-commit.com/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files  # Prevent giant files
+      - id: check-ast  # Check that files parse as valid Python
+      - id: check-byte-order-marker  # Check for files with a UTF-8 byte-order marker
+      - id: check-case-conflict  # Check for files with similar names but different cases
+      - id: check-docstring-first  # Check that docstrings are at the beginning of files
+      - id: check-json  # Check JSON files for parse errors
+      - id: check-merge-conflict  # Check for files with merge conflict strings
+      - id: check-toml  # Check TOML files for parse errors
+      - id: check-yaml  # Check YAML files for parse errors
+      - id: debug-statements  # Check for debugger imports and breakpoint() calls
+      - id: end-of-file-fixer  # Ensure files end with a newline
+      - id: mixed-line-ending  # Ensure consistent line endings
+        args: [--fix=lf]
+      - id: trailing-whitespace  # Remove trailing whitespace
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        language_version: python3
+        args: [--line-length=88]
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
+        args: [--profile=black, --filter-files]
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [flake8-docstrings, flake8-import-order]
+        args: [--max-line-length=88, --ignore=E203, --docstring-convention=google]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+      - id: mypy
+        additional_dependencies: [types-pyyaml, types-python-dateutil]
+        args: [--strict, --ignore-missing-imports]
+        exclude: ^tests/
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-check-blanket-noqa
+      - id: python-check-blanket-type-ignore
+      - id: python-use-type-annotations
+
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.16
+    hooks:
+      - id: mdformat
+        additional_dependencies: [mdformat-gfm, mdformat-toc]
+        args: [--wrap=80]
+
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.33.0
+    hooks:
+      - id: markdownlint
+        args: [--fix]
+        additional_dependencies: [markdownlint-cli2]
+
+  - repo: local
+    hooks:
+      - id: requirements-txt-fixer
+        name: requirements-txt-fixer
+        entry: bash -c 'python -m pip install -r requirements.txt && pip freeze > requirements.txt'
+        language: system
+        always_run: true
+        pass_filenames: false
+        stages: [manual]
+
+ci:
+  skip: [mypy, requirements-txt-fixer]  # Skip some checks in CI to save time

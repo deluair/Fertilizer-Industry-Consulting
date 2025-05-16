@@ -1,0 +1,327 @@
+# Realistic fertilizer industry simulation scenario (2025-2040)
+name: "Realistic Market Scenario"
+description: "A realistic scenario based on current market trends and projections for the fertilizer industry"
+start_year: 2025
+end_year: 2040
+
+# Market size and growth projections (in billions USD)
+market_size:
+  base_year: 2024
+  base_value: 210.78
+  projected_value: 275.46  # Expected in 2034
+  cagr: 2.72  # Compound Annual Growth Rate
+
+# Sustainability trends
+sustainability:
+  # Global fertilizer adoption trends by type
+  fertilizer_adoption_curves:
+    - fertilizer_type: "Organic/Biological"
+      market_growth:
+        min_percentage: 8.0
+        max_percentage: 20.0
+      target_year: 2040
+      
+    - fertilizer_type: "Controlled-Release"
+      market_growth:
+        min_percentage: 12.0
+        max_percentage: 30.0
+      target_year: 2040
+      
+    - fertilizer_type: "Conventional"
+      market_growth:
+        min_percentage: 50.0
+        max_percentage: 80.0
+      target_year: 2040
+  
+  # Technology adoption rates
+  technology_adoption:
+    - technology_name: "Precision Agriculture"
+      current_adoption: 25.0  # % of farmers
+      target_adoption: 60.0   # % by 2040
+      annual_growth: 5.5
+      impact_on_efficiency: 15.0  # % reduction in fertilizer use
+      
+    - technology_name: "Biological Inputs"
+      current_adoption: 20.0
+      target_adoption: 50.0
+      annual_growth: 7.2
+      impact_on_efficiency: 10.0
+  
+  # Regional trends
+  regional_shifts:
+    - region: "Africa"
+      current_application_rate: 120  # kg/ha
+      target_application_rate: 135    # kg/ha (global average)
+      growth_rate: 1.5  # % annual increase
+      
+    - region: "China & India"
+      current_application_rate: 165  # kg/ha (above global average)
+      target_application_rate: 135   # kg/ha (moving to global average)
+      reduction_rate: 1.8  # % annual decrease
+  
+  # Carbon footprint reduction targets
+  carbon_reduction_targets:
+    - product_type: "Ammonia-based Fertilizers"
+      current_emissions: 100  # Baseline index
+      target_2040: 60         # 40% reduction
+      
+    - product_type: "Phosphate Fertilizers"
+      current_emissions: 85    # Baseline index
+      target_2040: 55         # ~35% reduction
+  
+  # Regulatory impact scenarios
+  regulatory_impact:
+    - region: "EU"
+      policy: "EU Green Deal"
+      target_year: 2030
+      fertilizer_reduction_target: 20.0  # % reduction
+      
+    - region: "North America"
+      policy: "4R Nutrient Stewardship"
+      target_year: 2030
+      efficiency_improvement: 15.0  # % improvement
+
+# Production technology trends
+production_technology:
+  # Green ammonia production
+  green_ammonia:
+    current_share: 1.0    # % of total production
+    target_share_2040: 15.0
+    cost_premium_2025: 80.0  # % above conventional
+    cost_premium_2040: 20.0  # Target premium
+    
+  # Energy efficiency improvements
+  energy_efficiency:
+    current_energy_use: 100  # Index
+    target_energy_use: 75    # 25% improvement by 2040
+    annual_improvement: 2.5  # % per year
+  
+  # Digital transformation
+  digital_adoption:
+    current_level: 20.0  # % of operations
+    target_level: 75.0    # % by 2040
+    annual_growth: 8.0
+
+# Market dynamics
+market_dynamics:
+  # Price projections (index, 2025=100)
+  price_indices:
+    - product: "Urea"
+      2025: 100
+      2030: 110
+      2035: 120
+      2040: 130
+      
+    - product: "DAP"
+      2025: 100
+      2030: 115
+      2035: 125
+      2040: 140
+  
+  # Demand growth by region (% CAGR)
+  demand_growth:
+    - region: "Asia Pacific"
+      cagr: 3.2
+    - region: "North America"
+      cagr: 1.8
+    - region: "Europe"
+      cagr: 1.2
+    - region: "Latin America"
+      cagr: 2.8
+    - region: "Africa"
+      cagr: 4.0
+
+# Circular economy models
+circular_economy:
+  model_adoption:
+    - model_type: "Nutrient Recovery"
+      adoption_trajectory:
+        name: "Nutrient Recovery Adoption"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 20.0]
+          - [2035, 40.0]
+          - [2040, 60.0]
+  
+  regional_regulatory_evolution:
+    - region: "North America"
+      regulation_type: "Nitrogen Regulation"
+      intensification_timeline:
+        name: "NA Nitrogen Regulation Timeline"
+        trajectory:
+          - [2025, 10.0]
+          - [2030, 30.0]
+          - [2035, 60.0]
+          - [2040, 90.0]
+      impact_description: "Stricter nitrogen use regulations driving adoption of precision agriculture"
+  
+  industry_response_strategies:
+    - strategy_type: "R&D Investment Reallocation"
+      pathway_or_pattern:
+        name: "R&D Investment in Sustainable Tech"
+        trajectory:
+          - [2025, 15.0]
+          - [2030, 35.0]
+          - [2035, 55.0]
+          - [2040, 75.0]
+  
+  sustainable_tech_investment_flows:
+    - investment_source: "Venture Capital"
+      focus_area: "Agri-Tech Startups"
+      investment_volume_trajectory:
+        name: "VC Investment in Agri-Tech"
+        trajectory:
+          - [2025, 100.0]
+          - [2030, 250.0]
+          - [2035, 500.0]
+          - [2040, 800.0]
+  
+  carbon_neutrality_pathways:
+    - pathway_component: "Green Ammonia Production"
+      scaling_trajectory:
+        name: "Green Ammonia Scaling"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 20.0]
+          - [2035, 45.0]
+          - [2040, 70.0]
+      implementation_timeline:
+        name: "Green Ammonia Implementation"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 25.0]
+          - [2035, 55.0]
+          - [2040, 85.0]
+      description: "Transition to green ammonia production using renewable energy"
+
+production_technology:
+  production_technology_evolution:
+    - technology_name: "Green Ammonia Production"
+      metric_type: "Cost Reduction Curve (% vs. 2025 baseline)"
+      trajectory_or_curve:
+        name: "Green Ammonia Cost Reduction"
+        description: "Projected cost reduction relative to 2025 baseline."
+        trajectory:
+          - [2025, 0]
+          - [2030, -15.0]
+          - [2035, -30.0]
+          - [2040, -50.0]
+    
+    - technology_name: "Bio-based Fertilizer"
+      metric_type: "Market Share (% of total market)"
+      trajectory_or_curve:
+        name: "Bio-based Fertilizer Market Share"
+        description: "Projected market share of bio-based fertilizers"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 12.0]
+          - [2035, 25.0]
+          - [2040, 40.0]
+  
+  raw_material_diversification:
+    - material_focus: "Alternative Phosphate Sources"
+      development_stage: "Breakthrough"
+      description: "Development of alternative phosphate sources to reduce dependency on mined phosphate"
+      impact_trajectory:
+        name: "Alternative Phosphate Impact"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 20.0]
+          - [2035, 40.0]
+          - [2040, 65.0]
+  
+  production_efficiency_transformation:
+    - efficiency_metric: "Energy Consumption per Ton"
+      reduction_or_improvement_pathway:
+        name: "Energy Efficiency Improvement"
+        trajectory:
+          - [2025, 0]
+          - [2030, -12.0]
+          - [2035, -25.0]
+          - [2040, -40.0]
+  
+  ghg_emission_reduction_pathways:
+    - emission_type_or_technology: "Carbon Capture and Storage"
+      abatement_or_adoption_trajectory:
+        name: "CCS Adoption in Fertilizer Plants"
+        trajectory:
+          - [2025, 2.0]
+          - [2030, 15.0]
+          - [2035, 35.0]
+          - [2040, 60.0]
+  
+  production_capacity_evolution:
+    - region: "Global"
+      factor: "Expansion of Green Ammonia Capacity"
+      pattern_or_assessment:
+        name: "Green Ammonia Capacity Growth"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 25.0]
+          - [2035, 50.0]
+          - [2040, 80.0]
+      description: "Projected growth in green ammonia production capacity as a percentage of total ammonia capacity"
+
+client_needs:
+  client_priority_evolution:
+    - priority_area: "Sustainability"
+      evolution_trend:
+        name: "Sustainability Priority"
+        trajectory:
+          - [2025, 6.0]
+          - [2030, 7.5]
+          - [2035, 9.0]
+    - priority_area: "Cost Optimization"
+      evolution_trend:
+        name: "Importance of Cost Optimization"
+        trajectory:
+          - [2025, 8.0]
+          - [2030, 7.0]
+          - [2035, 6.0]
+    - priority_area: "Regulatory Compliance"
+      evolution_trend:
+        name: "Importance of Regulatory Compliance"
+        trajectory:
+          - [2025, 6.0]
+          - [2030, 7.5]
+          - [2035, 9.0]
+  
+  decision_maker_profile_shifts:
+    - profile_aspect: "Sustainability Leadership Influence"
+      shift_trend:
+        name: "Sustainability Leadership Growth"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 7.0]
+          - [2035, 9.0]
+      notes: "Increasing influence of sustainability-focused leadership in decision-making"
+  
+  problem_framing_evolution:
+    - framing_aspect: "Long-term vs. Short-term Orientation"
+      evolution_trend:
+        name: "Shift to Long-term Planning"
+        trajectory:
+          - [2025, 4.0]
+          - [2030, 6.0]
+          - [2035, 8.0]
+      notes: "Increasing focus on long-term sustainability goals over short-term gains"
+  
+  budget_allocation_shifts:
+    - budget_area: "Sustainability Initiatives"
+      shift_trend:
+        name: "Sustainability Budget Growth"
+        trajectory:
+          - [2025, 10.0]
+          - [2030, 25.0]
+          - [2035, 45.0]
+      notes: "Percentage of total budget allocated to sustainability initiatives"
+  
+  sector_boundary_blurring:
+    - converging_sector: "Agtech"
+      blurring_trend:
+        name: "Agtech Convergence"
+        trajectory:
+          - [2025, 3.0]
+          - [2030, 6.0]
+          - [2035, 8.0]
+      notes: "Increasing integration between fertilizer industry and agricultural technology sectors"

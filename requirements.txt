@@ -1,0 +1,23 @@
+# Core dependencies
+pydantic>=2.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+plotly>=5.13.0
+scipy>=1.10.0
+python-dotenv>=1.0.0
+
+# Data processing
+yaml>=6.0.1
+kaleido>=0.2.1
+
+# Development tools
+jupyter>=1.0.0
+pytest>=7.3.1
+black>=23.3.0
+mypy>=1.0.0
+pydantic-settings>=2.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+pytest-cov>=4.0.0
+pre-commit>=3.3.0

@@ -1,0 +1,32 @@
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.0.0
+pytest-xdist>=3.0.0
+
+# Code formatting and linting
+black>=23.0.0
+isort>=5.10.0
+flake8>=6.0.0
+flake8-docstrings>=1.6.0
+flake8-import-order>=0.18.0
+mypy>=1.0.0
+
+# Jupyter and documentation
+jupyter>=1.0.0
+ipykernel>=6.0.0
+jupyter-contrib-nbextensions>=0.5.1
+nbsphinx>=0.8.0
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+
+# Development tools
+pre-commit>=3.3.0
+bump2version>=1.0.0
+twine>=4.0.0
+
+# Type checking
+mypy>=1.0.0
+types-pyyaml>=6.0.0
+types-python-dateutil>=2.8.0
+typing-extensions>=4.0.0

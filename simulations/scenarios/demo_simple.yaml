@@ -1,0 +1,238 @@
+# Simple demo scenario for the fertilizer industry simulation
+name: "Simple Demo Scenario"
+description: "A simplified demo scenario for testing"
+start_year: 2025
+end_year: 2040
+
+# Sustainability trends
+sustainability:
+  # Global fertilizer adoption trends by type
+  fertilizer_adoption_curves:
+    - fertilizer_type: "Organic/Biological"
+      market_growth:
+        min_percentage: 5.0
+        max_percentage: 20.0
+      target_year: 2040
+
+    - fertilizer_type: "Controlled-Release"
+      market_growth:
+        min_percentage: 10.0
+        max_percentage: 30.0
+      target_year: 2040
+
+  # Technology penetration
+  controlled_release_tech_penetration:
+    - technology_name: "Controlled-Release"
+      category: "Corn"
+      adoption_rate:
+        name: "CRF Adoption"
+        trajectory:
+          - [2025, 10.0]
+          - [2030, 30.0]
+          - [2035, 50.0]
+          - [2040, 70.0]
+
+  precision_application_tech_adoption:
+    - technology_name: "Precision Agriculture"
+      category: "All Crops"
+      adoption_rate:
+        name: "Precision Ag Adoption"
+        trajectory:
+          - [2025, 15.0]
+          - [2030, 35.0]
+          - [2035, 60.0]
+          - [2040, 80.0]
+
+  # Carbon footprint reduction
+  carbon_footprint_reduction_trajectories:
+    - product_type: "Ammonia-based"
+      reduction_trajectory:
+        name: "Carbon Footprint Reduction"
+        trajectory:
+          - [2025, 0]
+          - [2030, 15.0]
+          - [2035, 30.0]
+          - [2040, 50.0]
+
+  # Circular economy
+  circular_economy_model_adoption:
+    - model_type: "Nutrient Recovery"
+      adoption_trajectory:
+        name: "Nutrient Recovery Adoption"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 20.0]
+          - [2035, 40.0]
+          - [2040, 60.0]
+
+  # Regulatory evolution
+  regional_regulatory_evolution:
+    - region: "EU"
+      regulation_type: "Nitrogen Regulation"
+      impact_description: "Strict nitrogen use regulations"
+      intensification_timeline:
+        name: "Regulation Implementation"
+        trajectory:
+          - [2025, 10.0]
+          - [2030, 40.0]
+          - [2035, 70.0]
+          - [2040, 90.0]
+
+  # Industry response
+  industry_response_strategies:
+    - strategy_type: "Green Production"
+      pathway_or_pattern:
+        name: "Green Production Adoption"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 25.0]
+          - [2035, 50.0]
+          - [2040, 75.0]
+
+  # Sustainable tech investment
+  sustainable_tech_investment_flows:
+    - investment_source: "Corporate R&D"
+      focus_area: "Green Technologies"
+      investment_volume_trajectory:
+        name: "R&D Investment Index"
+        trajectory:
+          - [2025, 100]
+          - [2030, 200]
+          - [2035, 300]
+          - [2040, 400]
+
+  # Carbon neutrality
+  carbon_neutrality_pathways:
+    - pathway_component: "Renewable Energy"
+      description: "Adoption of renewable energy"
+      scaling_trajectory:
+        name: "Renewable Energy Share"
+        trajectory:
+          - [2025, 10.0]
+          - [2030, 30.0]
+          - [2035, 60.0]
+          - [2040, 90.0]
+
+# Production technology trends
+production_technology:
+  # Technology evolution
+  production_technology_evolution:
+    - technology_name: "Green Ammonia"
+      metric_type: "Adoption"
+      trajectory_or_curve:
+        name: "Green Ammonia Adoption"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 20.0]
+          - [2035, 45.0]
+          - [2040, 75.0]
+  
+  # Raw material diversification
+  raw_material_diversification:
+    - material_focus: "Alternative phosphate"
+      development_stage: "Advancement"
+      description: "Development of alternative phosphate sources"
+      impact_trajectory:
+        name: "Alternative Phosphate Impact"
+        trajectory:
+          - [2025, 10.0]
+          - [2030, 30.0]
+          - [2035, 55.0]
+          - [2040, 80.0]
+  
+  # Production efficiency
+  production_efficiency_transformation:
+    - efficiency_metric: "Energy consumption"
+      reduction_or_improvement_pathway:
+        name: "Energy Efficiency Improvement"
+        trajectory:
+          - [2025, 0]
+          - [2030, 15.0]
+          - [2035, 30.0]
+          - [2040, 50.0]
+  
+  # GHG emission reduction
+  ghg_emission_reduction_pathways:
+    - emission_type_or_technology: "Carbon capture"
+      abatement_or_adoption_trajectory:
+        name: "Carbon Capture Adoption"
+        trajectory:
+          - [2025, 5.0]
+          - [2030, 20.0]
+          - [2035, 45.0]
+          - [2040, 70.0]
+  
+  # Production capacity evolution
+  production_capacity_evolution:
+    - region: "Global"
+      factor: "Expansion/contraction"
+      pattern_or_assessment:
+        name: "Production Capacity Change"
+        trajectory:
+          - [2025, 100.0]
+          - [2030, 115.0]
+          - [2035, 125.0]
+          - [2040, 135.0]
+      description: "Annual production capacity changes"
+
+# Client needs transformation
+client_needs:
+  # Client priority evolution
+  client_priority_evolution:
+    - priority_area: "Sustainability transformation"
+      evolution_trend:
+        name: "Sustainability Priority Trend"
+        trajectory:
+          - [2025, 30.0]
+          - [2030, 60.0]
+          - [2035, 80.0]
+          - [2040, 90.0]
+      notes: "Increasing focus on sustainable production methods"
+  
+  # Decision maker profile shifts
+  decision_maker_profile_shifts:
+    - profile_aspect: "Sustainability leadership influence"
+      shift_trend:
+        name: "Sustainability Leadership Trend"
+        trajectory:
+          - [2025, 20.0]
+          - [2030, 45.0]
+          - [2035, 70.0]
+          - [2040, 85.0]
+      notes: "Growing influence of sustainability-focused leaders"
+  
+  # Problem framing evolution
+  problem_framing_evolution:
+    - framing_aspect: "Strategic vs. tactical focus"
+      evolution_trend:
+        name: "Strategic Focus Trend"
+        trajectory:
+          - [2025, 40.0]
+          - [2030, 60.0]
+          - [2035, 75.0]
+          - [2040, 85.0]
+      notes: "Shift toward more strategic, long-term thinking"
+  
+  # Budget allocation shifts
+  budget_allocation_shifts:
+    - budget_area: "Sustainability initiatives"
+      shift_trend:
+        name: "Sustainability Budget Trend"
+        trajectory:
+          - [2025, 15.0]
+          - [2030, 35.0]
+          - [2035, 55.0]
+          - [2040, 75.0]
+      notes: "Increasing budget allocation to sustainability projects"
+  
+  # Sector boundary blurring
+  sector_boundary_blurring:
+    - converging_sector: "Renewable energy"
+      blurring_trend:
+        name: "Energy Sector Convergence"
+        trajectory:
+          - [2025, 20.0]
+          - [2030, 45.0]
+          - [2035, 70.0]
+          - [2040, 90.0]
+      notes: "Growing integration with renewable energy sector"
